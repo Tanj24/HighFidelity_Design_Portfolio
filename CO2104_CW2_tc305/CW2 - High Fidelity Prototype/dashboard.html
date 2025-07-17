@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Norwich Market</title>
+  <link rel="stylesheet" href="dash.css"> 
+  <link rel="stylesheet" href="css/all.min.css"> <!-- used for heart and share icon animation saved font locally instead of cdn as may not work offline/if it gets deleted in folder called css and webfonts-->
+</head>
+<body>
+ <!-- Header -->
+ <div class="header">
+  <div class="header-title">Explore Norwich Market</div>
+  <div class="header-icons">
+    <!--eventually will redirect to a fully functioning html page for calender,list,reminders now it redirects to a placeholder-->
+    <button title="Calendar" onclick="window.location.href='development/calender.html'">📅</button>
+    <button title="List" onclick="window.location.href='development/list.html'">📋</button>
+    <button title="Reminders" onclick="window.location.href='development/reminders.html'">🔔</button> 
+    <button id="dark-mode-toggle" title="Dark Mode">🌓</button>              
+    <button id="menu-toggle" class="menu-toggle">☰</button>                               
+  </div>
+</div>
+
+<!-- Side Panel -->
+<div id="side-panel" class="side-panel">
+  <div class="panel-content">
+    <div class="panel-header">
+      <span class="username">Test User</span>
+      <button class="close-panel">&times;</button>
+    </div>
+    <div class="panel-options">
+      <a href="profile.html" class="panel-option"><i class="fas fa-user"></i> Profile</a>  <!--take user to profile-->
+      <a href="index.html" class="panel-option"><i class="fas fa-sign-out-alt"></i> Sign Out</a> <!--take user to login page-->
+    </div>
+  </div>
+</div>
+<div class="overlay" id="panel-overlay"></div>
+
+  <!-- Market Stalls -->
+  <div class="container">
+    <div class="main-content">
+      <div class="search-and-icons">
+        <input type="text" placeholder="Search for a stall...">
+        <div class="icons">
+          <button title="Filter" onclick="alert('Filter feature is in development')">⚙️</button>  <!--clicking filter/sort gives a development message-->
+          <button title="Sort" onclick="alert('Sort feature is in development')">↕️</button>          
+          <button title="map" onclick="window.location.href='development/map.html'">🗺️</button> <!--redirect to placeholder-->
+          <button title="favourites" onclick="window.location.href='favourites.html'">❤️</button> 
+        </div>
+      </div>
+
+      <div class="stalls-grid">
+        <div class="stall">
+          <a href="development/stall-page.html"> <!-- each stall can eventually be redirected to its own unique page -->
+            <img src="images/image1.jpg" alt="Stall">
+          </a>
+          <p>Delight Kebabs</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> <!--calling the icon from the font family-->
+            <span class="favourite-message" style="display:none;">Added to Favourites</span> 
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+        <div class="stall">
+          <a href="development/stall-page.html"> 
+            <img src="images/image2.jpg" alt="Stall">
+          </a>
+          <p>China Wok</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> 
+            <span class="favourite-message" style="display:none;">Added to Favourites</span>
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+        <div class="stall">
+          <a href="development/stall-page.html"> 
+            <img src="images/image 3.jpg" alt="Stall">
+          </a>
+          <p>Lucys Fish and Chips</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> 
+            <span class="favourite-message" style="display:none;">Added to Favourites</span>
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+        <div class="stall">
+          <a href="development/stall-page.html"> 
+            <img src="images/image4.jpg" alt="Stall">
+          </a>
+          <p>The Watch Repair Workshop</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> 
+            <span class="favourite-message" style="display:none;">Added to Favourites</span>
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+        <div class="stall">
+          <a href="development/stall-page.html"> 
+            <img src="images/image5.jpg" alt="Stall">
+          </a>
+          <p>Kojak Barber</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> 
+            <span class="favourite-message" style="display:none;">Added to Favourites</span>
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+        <div class="stall">
+          <a href="development/stall-page.html"> 
+            <img src="images/image6.jpg" alt="Stall">
+          </a>
+          <p>Andersons Clothing</p>
+          <div class="stall-actions">
+            <i class="far fa-heart" title="Add to Favourites"></i> 
+            <span class="favourite-message" style="display:none;">Added to Favourites</span>
+            <i class="fas fa-share-alt" title="Share"></i> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Placeholder Simulated Google review section (no API)-->
+    <aside class="review-panel">
+      <div class="review-box">
+        <div class="reviews-header">
+          <h2>Google Reviews</h2>
+          <div class="reviews-summary">
+            <span class="count">(128 reviews)</span>
+          </div>
+        </div>
+        
+        <div class="review">
+          <div class="stall-name">Lucys Fish and Chips</div>
+          <div class="reviewer-info">
+            <span class="reviewer-name">Harry Masmanidis</span>    <!-- All reviews are real and from google for realism effect-->
+            <span class="review-date">1 month ago</span>
+          </div>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <div class="review-text">A Norwich Classic.</div>
+        </div>
+
+        <div class="review">
+          <div class="stall-name">Watch Reapir Workshop</div>
+          <div class="reviewer-info">
+            <span class="reviewer-name">Peter Bexon-Symms</span>
+            <span class="review-date">7 months ago</span>
+          </div>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <div class="review-text">Good selection of watch straps, which they fit straight away.</div>
+        </div>
+        
+        <div class="review">
+          <div class="stall-name">Delight Kebabs</div>
+          <div class="reviewer-info">
+            <span class="reviewer-name">Abby F</span>
+            <span class="review-date">8 months ago</span>
+          </div>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <div class="review-text">A lovely place with friendly owners and lovely food.</div>
+        </div>
+        
+        <div class="review">
+          <div class="stall-name">China Wok</div>
+          <div class="reviewer-info">
+            <span class="reviewer-name">Ruth Travell</span>
+            <span class="review-date">a year ago</span>
+          </div>
+          <div class="review-rating">⭐⭐⭐</div>
+          <div class="review-text">Very average food.</div>
+        </div>
+
+        
+        <div class="review-btn">
+          <button class="show-more-btn">
+            Show more reviews
+            <span class="arrow">⬇️</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  <!-- Share Popup -->
+<div class="overlay" id="shareOverlay"></div>
+<div class="share-popup" id="sharePopup">
+  <h3>Share this stall</h3>
+  <div class="share-options">
+    <div class="share-option" title="Copy link">🔗</div>
+    <div class="share-option" title="Email">✉️</div>
+    <div class="share-option" title=" Text Message">📱</div>
+    <div class="share-option" title="WhatsApp">💬</div>
+  </div>
+  <button class="close-share">Close</button>
+</div>
+
+<script src="JS/sidepanel.js"></script>
+<script src="JS/darkmode.js"></script>
+  <script src="JS/search.js"></script>
+  <script src="JS/togglefavourites.js"></script>
+  <script src="JS/share.js"></script>
+</body>
+</html>
+
+
+
+
+
+

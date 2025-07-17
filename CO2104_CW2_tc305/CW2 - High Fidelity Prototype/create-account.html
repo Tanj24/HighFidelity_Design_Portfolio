@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account | Explore Norwich Market</title>
+  <link rel="stylesheet" href="login.css" /> <!-- similiar to login-->
+  <script>
+    function handleSignup(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      
+      if (!username || !email || !password) {
+        alert("Please fill in all fields");
+        return;
+      }
+      
+      // Store user (for prototype only)
+      localStorage.setItem("loggedInUser", username);
+      localStorage.setItem("isLoggedIn", "true");
+      
+      alert("Account created successfully!");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</head>
+<!--welcome/create account section-->
+<body class="login-body">
+  <div class="welcome-section">
+    <h1>Welcome to Explore Norwich Market</h1>
+    <p>Discover your favorite local stalls, market secrets, and tasty food in the heart of Norwich</p>
+    <div class="image-row">
+      <img src="images/image7.jpg">
+      <img src="images/image8.jpg">
+      <img src="images/image9.jpg">
+    </div>
+  </div>
+  <div class="login-container-wrapper">
+  <div class="login-container">
+    <h2>Create Your Account</h2>
+    <form onsubmit="handleSignup(event)">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Create Account</button>
+      <p class="info-text">For this prototype, any credentials will work.</p>
+    </form>
+    <p class="signup-text">Already have an account? <a href="index.html">Login here</a></p>  <!--take users back to login-->
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Saved Stalls</title>
+  <link rel="stylesheet" href="favourites.css">
+  <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">Explore Norwich Market</div>
+    <div class="header-icons"> <!--redirect to placeholder-->
+      <button title="Calendar" onclick="window.location.href='development/calender.html'">📅</button>
+    <button title="List" onclick="window.location.href='development/list.html'">📋</button>
+    <button title="Reminders" onclick="window.location.href='development/reminders.html'">🔔</button> 
+      <button id="dark-mode-toggle" title="Dark Mode">🌓</button> 
+      <button id="menu-toggle" class="menu-toggle">☰</button> 
+    </div>
+  </div>
+
+  <!-- Side Panel -->
+<div id="side-panel" class="side-panel">
+  <div class="panel-content">
+    <div class="panel-header">
+      <span class="username">Test User</span>
+      <button class="close-panel">&times;</button>
+    </div>
+    <div class="panel-options"> <!--take user to profile and login page-->
+      <a href="profile.html" class="panel-option"><i class="fas fa-user"></i> Profile</a>
+      <a href="index.html" class="panel-option"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="panel-overlay"></div>
+
+  
+<!-- Main -->
+<div class="main-content">
+  <!-- Top 1/3 below header -->
+  <div class="search-and-title">
+    <div class="title-and-btn">
+      <button onclick="window.location.href='dashboard.html'" title="Back to Markets" class="back-to-market-btn">🔙</button> <!--take user back to market-->
+      <div class="saved-stalls-title">Your Saved Stalls</div>
+    </div>
+    <div class="search-and-icons">
+      <input type="text" placeholder="Search your saved stalls...">
+      <div class="icons"> <!--show development message and redirect to placeholder-->
+        <button title="Filter" onclick="alert('Filter feature is in development')">⚙️</button> 
+        <button title="Sort" onclick="alert('Sort feature is in development')">↕️</button> 
+        <button title="Map" onclick="window.location.href='development/map.html'">🗺️</button> 
+      </div>
+    </div>
+  </div>
+
+  <div class="stalls-grid" id="favouriteStallsContainer">
+  </div>
+
+  <script>
+    // Function to load favourited stalls from localStorage and display them
+    function loadFavouriteStalls() {
+      const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+      const container = document.getElementById('favouriteStallsContainer');
+      
+      if (favourites.length === 0) {
+        container.innerHTML = '<p>No favourites added yet.</p>';
+      } else {
+        favourites.forEach(stall => {
+          const stallElement = document.createElement('div');
+          stallElement.classList.add('stall');
+          stallElement.innerHTML = `
+            <a href="development/stall-page.html">
+              <img src="${stall.image}" alt="Stall">
+            </a>
+            <p>${stall.name}</p>
+            <div class="stall-actions">
+              <i class="fas fa-heart" title="Remove from Favourites"></i>
+              <i class="fas fa-share-alt" title="Share"></i> 
+            </div>
+          `;
+          container.appendChild(stallElement);
+        });
+        // Set up share button after stalls are loaded
+    setTimeout(() => {
+      if (typeof setupShareButtons === 'function') {
+        setupShareButtons();
+      }
+    }, 100);
+      }
+    }
+
+    // when page reloaded stalls still show
+    window.addEventListener('DOMContentLoaded', loadFavouriteStalls);
+  </script>
+
+  <!-- Share Popup -->
+<div class="overlay" id="shareOverlay"></div>
+<div class="share-popup" id="sharePopup">
+  <h3>Share this stall</h3>
+  <div class="share-options">
+    <div class="share-option" title="Copy link">🔗</div>
+    <div class="share-option" title="Email">✉️</div>
+    <div class="share-option" title=" Text Message">📱</div>
+    <div class="share-option" title="WhatsApp">💬</div>
+  </div>
+  <button class="close-share">Close</button>
+</div>
+
+
+  <script src="JS/sidepanel.js"></script>
+  <script src="JS/darkmode.js"></script>
+  <script src="JS/share.js"></script>
+  <script src="JS/search.js"></script>
+  <script src="JS/removefavourites.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,164 @@
+/* Login Page */
+.login-body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;              
+  justify-content: space-between;  
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* login */
+.login-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #004d40;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #00695c;
+}
+
+.info-text {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.signup-text {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.signup-text a {
+  color: #004d40;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Create account page */
+.login-container input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-container button[type="submit"] {
+  background-color: #00695c;
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #004d40;
+}
+
+/* Left side welcome section */
+.welcome-section {
+  flex: 1;
+  background-color: #e0f2f1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #004d40;
+  margin: 0;
+}
+
+.welcome-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.image-row {
+  display: flex;
+  gap: 10px;
+}
+
+.image-row img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login-container-wrapper {
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.dark-mode {
+  background-color: #121212;
+}
+
+.dark-mode .login-container {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark-mode input {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+.dark-mode button {
+  background-color: #26a69a;
+  color: white;
+}
+
+.dark-mode button:hover {
+  background-color: #1de9b6;
+}

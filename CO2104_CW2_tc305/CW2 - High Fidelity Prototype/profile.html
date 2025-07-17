@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile | Explore Norwich Market</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header>
+    <h1>Explore Norwich Market</h1>
+  </header>
+<!-- prototype no database to update-->
+  <div class="profile-page">
+    <div class="profile-text">
+        <h2>Manage Your Profile</h2>
+      <p>Update your information to stay connected and get personalised recommendations!</p>
+    </div>
+    <div class="profile-container">
+      <div class="profile-details">
+        <h3>Edit Profile Information</h3>
+        <form>
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Username" value="testuser">
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" value="test@example.com">
+          
+          <label for="password">New Password</label>
+          <input type="password" id="password" placeholder="New Password">
+          
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm Password">
+          
+          <div class="form-actions">
+            <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Back to Market</button>
+            <button type="submit" class="btn-primary">Update Profile</button>
+          </div>
+        </form>
+      </div>
+      <!--makret highlight images redirect to placeholder-->
+      <div class="profile-images">
+        <h3>Market Highlights</h3>
+        <p>Take a closer look at the best spots in Norwich Market.</p>
+        <div class="images">
+          <a href="development/stall-page.html"><img src="images/image2.jpg"></a>
+          <a href="development/stall-page.html"><img src="images/image5.jpg"></a>
+          <a href="development/stall-page.html"><img src="images/image6.jpg"></a>
+          <a href="development/stall-page.html"><img src="images/image1.jpg"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--calls dark mode and checks local storage to see if its on/off-->
+  <script src="darkmode.js"></script>
+  <script>
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Prototype form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Profile updated (prototype)');
+    });
+  </script>
+</body>
+</html>
